@@ -17,6 +17,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
+<<<<<<< HEAD
 # ADSP
 include $(CLEAR_VARS)
 LOCAL_C_INCLUDES := external/tinyalsa/include
@@ -26,6 +27,17 @@ LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
 # RIL
+=======
+# RIL
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := ASensorManager.cpp
+LOCAL_SHARED_LIBRARIES := android.hardware.sensors@1.0
+LOCAL_STATIC_LIBRARIES := android.hardware.sensors@1.0-convert
+LOCAL_MODULE := libshim_ril
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_SHARED_LIBRARY)
+
+>>>>>>> db4eda2... albus : add RIL shim
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := libqsap_shim.c
 LOCAL_SHARED_LIBRARIES := libqsap_sdk liblog libcutils libutils
