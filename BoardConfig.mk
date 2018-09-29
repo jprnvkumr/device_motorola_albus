@@ -243,8 +243,7 @@ LZMA_RAMDISK_TARGETS := recovery
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
-<<<<<<< HEAD
-=======
+
 # Shim
 TARGET_LD_SHIM_LIBS := \
     /vendor/lib/libmot_gpu_mapper.so|libgpu_mapper_shim.so \
@@ -252,9 +251,9 @@ TARGET_LD_SHIM_LIBS := \
     /vendor/lib/libYuvSkia.so|libgpu_mapper_shim.so \
     /vendor/lib64/libsensorndkbridge.so|libshim_ril.so \
     /vendor/lib/libsensorndkbridge.so|libshim_ril.so \
-    /vendor/lib64/vendor.qti.gnss@1.0_vendor.so|libgnss_shim.so
+    /vendor/lib64/vendor.qti.gnss@1.0_vendor.so|libgnss_shim.so \
+    /vendor/lib/libjustshoot.so|libjustshoot_shim.so
 
->>>>>>> db4eda2... albus : add RIL shim
 # Releasetools
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_albus
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)

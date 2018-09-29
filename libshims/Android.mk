@@ -17,7 +17,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-<<<<<<< HEAD
 # ADSP
 include $(CLEAR_VARS)
 LOCAL_C_INCLUDES := external/tinyalsa/include
@@ -26,8 +25,7 @@ LOCAL_MODULE := libshim_adsp
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
-# RIL
-=======
+
 # RIL
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := ASensorManager.cpp
@@ -37,11 +35,12 @@ LOCAL_MODULE := libshim_ril
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
->>>>>>> db4eda2... albus : add RIL shim
+
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := libqsap_shim.c
 LOCAL_SHARED_LIBRARIES := libqsap_sdk liblog libcutils libutils
 LOCAL_C_INCLUDES := $(DEVICE_PATH)/softap/sdk
+LOCAL_C_INCLUDES := $(TOP)/system/qcom/softap/sdk
 LOCAL_MODULE := libqsap_shim
 LOCAL_MODULE_TAGS := optional
 LOCAL_PROPRIETARY_MODULE := true
@@ -52,6 +51,9 @@ LOCAL_SRC_FILES := ASensorManager.cpp
 LOCAL_SHARED_LIBRARIES := android.hardware.sensors@1.0
 LOCAL_STATIC_LIBRARIES := android.hardware.sensors@1.0-convert
 LOCAL_MODULE := libshim_ril
+LOCAL_SRC_FILES := justshoot_shim.cpp
+LOCAL_SHARED_LIBRARIES := libutils
+LOCAL_MODULE := libjustshoot_shim
 LOCAL_MODULE_TAGS := optional
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
@@ -60,6 +62,7 @@ include $(BUILD_SHARED_LIBRARY)
 # Camera
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := libgpu_mapper_shim.cpp
+LOCAL_SRC_FILES := gpu_mapper_shim.cpp
 LOCAL_SHARED_LIBRARIES := libgui libutils
 LOCAL_MODULE := libgpu_mapper_shim
 LOCAL_MODULE_TAGS := optional
