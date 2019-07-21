@@ -16,6 +16,7 @@ vendor/lib64/libaptXHD_encoder.so|76eb03998f9b4f98029a4408076685892726e45a
 vendor/lib64/libaptX_encoder.so|a407a92a6eb467886c3970629ebcab4db95b7600
 
 # Audio
+vendor/etc/acdbdata/adsp_avs_config.acdb
 vendor/etc/acdbdata/Bluetooth_cal.acdb
 vendor/etc/acdbdata/General_cal.acdb
 vendor/etc/acdbdata/Global_cal.acdb
@@ -55,6 +56,7 @@ vendor/lib64/libldacBT_abr.so|26aa6bf2bac014ba80f09f835354093fbc209037
 vendor/lib64/libldacBT_enc.so|a5fb63c23a748ed3e1ddf39c6da353f3d2da88f1
 
 # Camera
+vendor/etc/permissions/com.motorola.camera2.xml
 vendor/bin/hw/motorola.hardware.camera.provider@2.4-service
 vendor/lib/motorola.hardware.camera.provider@2.4.so
 vendor/bin/hw/motorola.hardware.mods_camera.provider@2.4-service
