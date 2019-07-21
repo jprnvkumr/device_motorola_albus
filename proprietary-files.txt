@@ -16,7 +16,6 @@ vendor/lib64/libaptXHD_encoder.so|76eb03998f9b4f98029a4408076685892726e45a
 vendor/lib64/libaptX_encoder.so|a407a92a6eb467886c3970629ebcab4db95b7600
 
 # Audio
-vendor/etc/acdbdata/adsp_avs_config.acdb
 vendor/etc/acdbdata/Bluetooth_cal.acdb
 vendor/etc/acdbdata/General_cal.acdb
 vendor/etc/acdbdata/Global_cal.acdb
@@ -46,7 +45,7 @@ vendor/lib64/libqtigef.so|c30d330be2057ef1a229b7fc7c093df3202fbadc
 vendor/bin/btnvtool|35148aebc0d9b8cc0d1cf55c08a4bfe2d1860945
 vendor/bin/hci_qcomm_init|3fa902b824cb07949f322d1e5a38f54ed4d04213
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|b6526856cac0db84cc74d5f8b205a97a1928fa33
-vendor/bin/wcnss_filter|dc8e615b6dd08a0a3c430007a1249d5b46ce43e2
+vendor/bin/wcnss_filter|6a645ce261907b4287f69cce3a863ca1c11c821c
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib/libbtnv.so
 vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0_vendor.so|a1fd8deaeb7eddc94823f11563c5be540e303c17
@@ -56,9 +55,10 @@ vendor/lib64/libldacBT_abr.so|26aa6bf2bac014ba80f09f835354093fbc209037
 vendor/lib64/libldacBT_enc.so|a5fb63c23a748ed3e1ddf39c6da353f3d2da88f1
 
 # Camera
-vendor/etc/permissions/com.motorola.camera2.xml
 vendor/bin/hw/motorola.hardware.camera.provider@2.4-service
+vendor/lib/motorola.hardware.camera.provider@2.4.so
 vendor/bin/hw/motorola.hardware.mods_camera.provider@2.4-service
+vendor/bin/hw/motorola.hardware.camera.provider@2.4-service
 vendor/bin/mm-qcamera-app
 vendor/bin/mm-qcamera-daemon
 vendor/bin/vl53l1_daemon
@@ -66,11 +66,11 @@ vendor/etc/init/motorola.hardware.camera.provider@2.4-service_delayed.rc
 vendor/etc/init/motorola.hardware.mods_camera.provider@2.4-service.rc
 vendor/etc/permissions/com.motorola.cameraone.xml
 vendor/etc/permissions/com.motorola.moto.xml
+vendor/etc/permissions/com.motorola.camera2.xml
 vendor/lib/hw/camera.msm8953.so
 vendor/lib/hw/libcamera_mods_legacy_hal.so
 vendor/lib/hw/motorola.hardware.camera.provider@2.4-impl.so
 vendor/lib/hw/motorola.hardware.mods_camera.provider@2.4-impl.so
-vendor/lib/libYuvSkia.so
 vendor/lib/lib_mot_led_calibration.so
 vendor/lib/libactuator_dw9718s.so
 vendor/lib/libactuator_dw9763.so
@@ -511,7 +511,7 @@ vendor/lib/libzaf_core.so|ba290700d210aaaf0bfac3b805b068c47bb9cfb8
 vendor/lib/motcamera.device@1.0-impl.so
 vendor/lib/motorola.hardware.camera.device@1.0.so
 vendor/lib/motorola.hardware.camera.device@1.0_vendor.so
-vendor/lib/motorola.hardware.camera.provider@2.4_vendor.so
+vendor/lib/motorola.hardware.camera.provider@2.4_vendor.so||f48d16e1e3f777a4fb0897ff2f667d98542b15df
 vendor/lib/motorola.hardware.mods_camera.provider@2.4.so
 vendor/lib64/lib-imscamera.so|2bd3687fccd55ff5ce393ae09b880b865a32621c
 vendor/lib64/lib-imscmservice.so|8a98d82099cfc3e0f0e7fff044b0892757714440
@@ -569,7 +569,7 @@ vendor/lib64/libjni_sharpshooter.so|8f9f40e56acda7cec315647fe76cda2468477f70
 vendor/lib64/libjni_trackingfocus.so|3b56cb984f45acd6f7b22b7cede9dfb45bbaf2b2
 
 # CNE
--priv-app/CNEService/CNEService.apk
+-priv-app/CNEService/CNEService.apk||69da7058ac27e0af3d498816bc04773c47b0ebfc
 -vendor/lib/com.quicinc.cne.api@1.0.so
 -vendor/lib/com.quicinc.cne.constants@1.0.so
 -vendor/lib/com.quicinc.cne.constants@2.0.so
@@ -1170,7 +1170,7 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so|6b4241e34
 vendor/radio/qcril_database/qcril.db
 
 # Radio - IMS
--app/ims/ims.apk
+-app/ims/ims.apk|406f0c50b44480789072222a6ba120894dc02394
 -app/imssettings/imssettings.apk
 -framework/com.qualcomm.qti.imscmservice@1.0-java.jar
 -framework/imscmlibrary.jar
@@ -1242,7 +1242,6 @@ vendor/lib/lib_motsensorlistener.so
 vendor/lib/libiio.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
-vendor/lib/libsensorndkbridge.so
 vendor/lib/sensor_calibrate.so
 vendor/lib/sensors.iio.so
 vendor/lib/sensors.ssc.so
@@ -1252,7 +1251,6 @@ vendor/lib64/hw/sensors.msm8953.so|9ae9692c2467f30605f9f68fb44e13bcd0b48e7e
 vendor/lib64/libiio.so|fab317a4ca3cbce6df25cc190f1fd7642c682d7c
 vendor/lib64/libsensor1.so|b679da063bc3716185d3abfc94c0afc514284a91
 vendor/lib64/libsensor_reg.so|0d963c1b4909be75c909cdfb9195439e414c68c0
-vendor/lib64/libsensorndkbridge.so|fbc6c83c476f7aeccac89bfa6e3e68a5d284f5d5
 vendor/lib64/libsns_low_lat_stream_stub.so|e32b4601f86923ff6dfafae15014c8c3807fd958
 vendor/lib64/sensor_calibrate.so|a705eab941dcd84870bffd97f2067334ce23ef61
 vendor/lib64/sensors.iio.so|8a115a8a1087c0b8663f7bb47bba11f15f3a62aa
