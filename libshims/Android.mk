@@ -35,6 +35,15 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
 
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := ASensorManager.cpp
+LOCAL_SHARED_LIBRARIES := android.hardware.sensors@1.0
+LOCAL_STATIC_LIBRARIES := android.hardware.sensors@1.0-convert
+LOCAL_MODULE := libshim_ril
+LOCAL_MODULE_TAGS := optional
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_SHARED_LIBRARY)
+
 
 # Camera
 include $(CLEAR_VARS)
@@ -43,3 +52,12 @@ LOCAL_SHARED_LIBRARIES := libgui libutils
 LOCAL_MODULE := libgpu_mapper_shim
 LOCAL_MODULE_TAGS := optional
 LOCAL_PROPRIETARY_MODULE := true
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := justshoot_shim.cpp
+LOCAL_SHARED_LIBRARIES := libutils
+LOCAL_MODULE := libjustshoot_shim
+LOCAL_MODULE_TAGS := optional
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_SHARED_LIBRARY)
+
