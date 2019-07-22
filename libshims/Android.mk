@@ -47,7 +47,7 @@ include $(BUILD_SHARED_LIBRARY)
 
 # Camera
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES := gpu_mapper_shim.cpp
+LOCAL_SRC_FILES := libgpu_mapper_shim.cpp
 LOCAL_SHARED_LIBRARIES := libgui libutils
 LOCAL_MODULE := libgpu_mapper_shim
 LOCAL_MODULE_TAGS := optional
