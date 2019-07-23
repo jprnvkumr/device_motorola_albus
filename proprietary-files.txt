@@ -1169,16 +1169,7 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so|ed708f82a
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so|6b4241e345424fa50bafcd92a394f18efe7cc469
 vendor/radio/qcril_database/qcril.db
 
-<<<<<<< HEAD
-# Radio - IMS
--app/ims/ims.apk|406f0c50b44480789072222a6ba120894dc02394
--app/imssettings/imssettings.apk
--framework/com.qualcomm.qti.imscmservice@1.0-java.jar
--framework/imscmlibrary.jar
--framework/rcsimssettings.jar
--vendor/framework/qti-vzw-ims-internal.jar
-lib64/com.qualcomm.qti.imscmservice@1.0.so|af44a8726cc3e68c4d6f413a64721682540193de
-=======
+
 # IMS - from tissot - OPR1.170623.026
 -app/ims/ims.apk|406f0c50b44480789072222a6ba120894dc02394
 etc/permissions/qti-vzw-ims-internal.xml|3e41b645dd4ad8bad6775c103a34bfd7a507a4f7
@@ -1198,7 +1189,6 @@ lib64/lib-imsvideocodec.so|4eda9cc57db1ef2b54b7ad52290841062fb790ab
 lib64/lib-imsvt.so|3abfadb7e8702dea1ba6afffd044456854a6e31c
 lib64/lib-imsvtextutils.so|4badae48ad5c9f43b6ac483f207f1d3ebe2a6f5e
 lib64/lib-imsvtutils.so|b7dd9742015f0cdf565c08ad2260bf460875a42d
->>>>>>> ad6c801... albus : update IMS
 lib64/libdiag_system.so|1f44b1dabe2c680f66c412ef2de4118670f2414a
 lib64/libimscamera_jni.so|3e53b8d01268da279829abbf7c1b93e5a4179d92
 lib64/libimsmedia_jni.so|c895e5e439f33f509f0529edee5f5273785bc14b
