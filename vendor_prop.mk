@@ -284,6 +284,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sensors.tof.interval_ms=5000 \
     persist.qfp=false
 
+# Storage
+    ro.sys.sdcardfs=true
+
 #Trim properties
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
