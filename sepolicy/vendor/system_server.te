@@ -1,18 +1,7 @@
-binder_call(system_server, rild);
+allow system_server fpc_extension_service:hwservice_manager find;
 
-allow system_server sysfs_homebutton:file rw_file_perms;
-allow system_server sysfs_homebutton:dir r_dir_perms;
-allow system_server rild:binder transfer;
-allow system_server sysfs_capsense:dir search;
-allow system_server sysfs_capsense:file rw_file_perms;
-allow system_server init:unix_stream_socket { read };
+binder_call(system_server,rild);
 
-allow system_server qti_debugfs:file { getattr open read };
-allow system_server init:unix_stream_socket write;
-
-allow system_server sensors_device:chr_file { ioctl open read };
-
-allow system_server vendor_file:file { getattr read };
-
-allow system_server sysfs:file getattr;
-allow system_server thermal_service:service_manager find;
+# Input devices
+r_dir_file(system_server, idc_file);
+r_dir_file(system_server, keylayout_file);
