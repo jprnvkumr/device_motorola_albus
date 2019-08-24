@@ -2297,12 +2297,6 @@ int IPACM_Wlan::ipa_query_wlan_client()
 		return IPACM_FAILURE;
 	}
 
-	if (ioctl(fd, IPA_IOC_QUERY_WLAN_CLIENT) < 0) {
-		IPACMERR("IOCTL IPA_IOC_QUERY_WLAN_CLIENT call failed: %s \n", strerror(errno));
-		close(fd);
-		return IPACM_FAILURE;
-	}
-
 	IPACMDBG_H("send IPA_IOC_QUERY_WLAN_CLIENT \n");
 	close(fd);
 	return IPACM_SUCCESS;
