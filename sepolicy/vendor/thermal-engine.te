@@ -1,9 +1,10 @@
-get_prop(thermal-engine, diag_prop)
-allow thermal-engine socket_device:sock_file { create setattr };
-allow thermal-engine sysfs_rmt_storage:dir search;
-allow thermal-engine sysfs_rmt_storage:file r_file_perms;
-allow thermal-engine sysfs_uio:file r_file_perms;
-allow thermal-engine sysfs_uio:dir { read open search };
-allow thermal-engine sysfs_uio:lnk_file { read };
-allow thermal-engine sysfs_vadc_dev:lnk_file { read open };
-allow thermal-engine sysfs_vadc_dev:dir rw_dir_perms;
+allow thermal-engine { sysfs sysfs_devices_system_cpu }:file { getattr read write open };
+allow thermal-engine { sysfs_thermal sysfs_usb_supply }:dir search;
+allow thermal-engine { sysfs_thermal sysfs_kgsl }:{ lnk_file file } { rw_file_perms open getattr};
+allow thermal-engine sysfs_battery_supply:dir search;
+allow thermal-engine sysfs_battery_supply:file rw_file_perms;
+allow thermal-engine sysfs_usb_supply:file rw_file_perms;
+allow thermal-engine sysfs_batteryinfo:dir r_dir_perms;
+allow thermal-engine sysfs_batteryinfo:file rw_file_perms;
+allow thermal-engine sysfs_soc_qcom:file { open read write };
+allow thermal-engine sysfs_soc_qcom:dir search;

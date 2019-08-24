@@ -1,22 +1,23 @@
-Device Tree for Moto Z2 Play (albus)
+Device Tree for Moto Z (Griffin)
 ===========================================
 
-The Motorola Moto Z2 Play (codenamed _"albus"_) is a mid-range smartphone from Motorola mobility.
-It was announced on June 2017.
+The Motorola Moto Z (codenamed _"griffin"_) is a high-range smartphone from Motorola mobility.
+It was announced on September 2016.
 
 Basic   | Spec Sheet
 -------:|:-------------------------
-CPU     | Octa-core 2.2 GHz Cortex-A53
-Chipset | Qualcomm MSM8953-Pro Snapdragon 626
-GPU     | Adreno 506
-Memory  | 3/4 GB RAM
-Shipped Android Version | 7.1.1
+CPU     | Quad-core (2x2.15 GHz Kryo & 2x1.6 GHz Kryo)
+Chipset | Qualcomm MSM8996 Snapdragon 820
+GPU     | Adreno 530
+Memory  | 4 GB RAM
+Shipped Android Version | 6.0.1
 Storage | 32/64 GB
 MicroSD | Up to 256 GB
-Battery | Li-Ion 3000mAh battery
-Display | 1080 x 1920 pixels, 5.2 inches (~401 ppi pixel density)
-Camera  | 12 MP, 2150 x 1440 pixels, laser focus, dual flash LED
+Battery | Li-Ion 2600mAh battery
+Display | 1440 x 2560 pixels (~535 ppi pixel density)
+Camera  | 13 MP, f/1.8, laser autofocus, OIS, dual-LED (dual tone) flash
 
+Copyright 2016 - The CyanogenMod Project.
 Copyright 2017 - The LineageOS Project.
 
-![Moto Z2 Play](http://cdn2.gsmarena.com/vv/pics/motorola/motorola-moto-z2-play-0.jpg "Moto Z2 Play")
+![Moto Z](http://cdn2.gsmarena.com/vv/pics/motorola/motorola-moto-z-1.jpg "Moto Z")

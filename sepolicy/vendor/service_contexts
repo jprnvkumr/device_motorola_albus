@@ -1,3 +1,14 @@
-com.qualcomm.qti.qseeproxy                     u:object_r:qseeproxy_service_old:s0
-vendor.qcom.PeripheralManager                     u:object_r:per_mgr_service_old:s0
-media.camera_bgproc                            u:object_r:camera_bgproc_service:s0
+iphonenvinfo                              u:object_r:radio_service:s0
+checkin_mot                               u:object_r:mot_app_service:s0
+com.motorola.aon.glimpse_service          u:object_r:mot_app_service:s0
+vzwconnectivity                           u:object_r:mot_system_service:s0
+locationproxy                             u:object_r:mot_system_service:s0
+partial_display_service                   u:object_r:mot_app_service:s0
+modality                                  u:object_r:mot_app_service:s0
+motodisplay_int_service                   u:object_r:mot_system_service:s0
+imssimrecords                             u:object_r:radio_service:s0
+moto_pers_data_block                      u:object_r:mot_system_service:s0
+mot_device_policy                         u:object_r:device_policy_service:s0
+panel                                     u:object_r:mot_panel_service:s0
+panel_native                              u:object_r:mot_panel_service:s0
+rcs                                       u:object_r:radio_service:s0

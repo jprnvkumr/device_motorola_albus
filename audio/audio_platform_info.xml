@@ -52,7 +52,6 @@
 	<device name="SND_DEVICE_IN_VOICE_DMIC_TMUS" acdb_id="41" />
 	<device name="SND_DEVICE_IN_MOD_VOICE_SPEAKER_INT_MIC" acdb_id="43" />
 	<device name="SND_DEVICE_IN_UNPROCESSED_STEREO_MIC" acdb_id="43" />
-	<device name="SND_DEVICE_IN_CAPTURE_FM" acdb_id="43" />
 	<device name="SND_DEVICE_IN_HEADSET_MIC_AEC" acdb_id="47" />
 	<device name="SND_DEVICE_IN_MOD_HEADSET_MIC_AEC" acdb_id="47" />
 	<device name="SND_DEVICE_IN_MOD_CAMCORDER" acdb_id="50" />
@@ -75,28 +74,18 @@
 </acdb_ids>
 
 <pcm_ids>
-	<usecase name="USECASE_AUDIO_PLAYBACK_LOW_LATENCY" type="out" id="12" />
-	<usecase name="USECASE_AUDIO_RECORD_LOW_LATENCY" type="in" id="12" />
-	<usecase name="USECASE_VOICEMMODE1_CALL" type="in" id="35" />
-	<usecase name="USECASE_VOICEMMODE1_CALL" type="out" id="35" />
-	<usecase name="USECASE_VOICEMMODE2_CALL" type="in" id="36" />
-	<usecase name="USECASE_VOICEMMODE2_CALL" type="out" id="36" />
-	<usecase name="USECASE_AUDIO_DSM_FEEDBACK" type="in" id="65" />
-	<usecase name="USECASE_MOTVR_COMMAND" type="in" id="43" />
-	<usecase name="USECASE_MOTVR_TRACE" type="in" id="44" />
-	<usecase name="USECASE_ADSPD_DSP1_TEXT" type="in" id="47" />
-	<usecase name="USECASE_ADSPD_DSP2_TEXT" type="in" id="45" />
-	<usecase name="USECASE_ADSPD_DSP3_TEXT" type="in" id="46" />
+	<usecase name="USECASE_AUDIO_ECHO_REF" type="in" id="63" />
+	<usecase name="USECASE_MOTVR_COMMAND" type="in" id="45" />
+	<usecase name="USECASE_MOTVR_TRACE" type="in" id="46" />
 </pcm_ids>
 
 <backend_names>
-	<device name="SND_DEVICE_OUT_HEADPHONES" backend="headphones" />
-	<device name="SND_DEVICE_OUT_LINE" backend="headphones" />
-	<device name="SND_DEVICE_OUT_HDMI" backend="hdmi" interface="SLIMBUS_0_RX" />
+	<device name="SND_DEVICE_OUT_HEADPHONES" backend="headphones"/>
+	<device name="SND_DEVICE_OUT_LINE" backend="headphones"/>
 </backend_names>
 
 <config_params>
-	<param key="input_mic_max_count" value="3"/>
+	<param key="input_mic_max_count" value="4"/>
 </config_params>
 
 </audio_platform_info>

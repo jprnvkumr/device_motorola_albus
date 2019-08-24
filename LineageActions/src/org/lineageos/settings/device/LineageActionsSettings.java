@@ -17,17 +17,17 @@
 
 package org.lineageos.settings.device;
 
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.UserHandle;
 import android.preference.PreferenceManager;
-import android.provider.Settings;
 
-import android.util.Log;
+import com.android.internal.hardware.AmbientDisplayConfiguration;
 
 import org.lineageos.settings.device.actions.UpdatedStateNotifier;
 import org.lineageos.settings.device.actions.CameraActivationAction;
 import org.lineageos.settings.device.actions.TorchAction;
+import org.lineageos.settings.device.actions.Constants;
 
 public class LineageActionsSettings {
     private static final String TAG = "LineageActions";
@@ -67,20 +67,28 @@ public class LineageActionsSettings {
         return mChopChopEnabled;
     }
 
-    public static boolean isDozeEnabled(ContentResolver contentResolver) {
-        return (Settings.Secure.getInt(contentResolver, Settings.Secure.DOZE_ENABLED, 1) != 0);
+    public static boolean isAODEnabled(Context context) {
+        return new AmbientDisplayConfiguration(context).alwaysOnEnabled(UserHandle.USER_CURRENT);
+    }
+
+    public static boolean isDozeEnabled(Context context) {
+        return new AmbientDisplayConfiguration(context).pulseOnNotificationEnabled(UserHandle.USER_CURRENT);
+    }
+
+    public boolean isAODEnabled() {
+        return isAODEnabled(mContext);
     }
 
     public boolean isDozeEnabled() {
-        return isDozeEnabled(mContext.getContentResolver());
+        return isDozeEnabled(mContext);
     }
 
     public boolean isIrWakeupEnabled() {
-        return isDozeEnabled() && mIrWakeUpEnabled;
+        return isDozeEnabled() && !isAODEnabled() && mIrWakeUpEnabled;
     }
 
     public boolean isPickUpEnabled() {
-        return isDozeEnabled() && mPickUpGestureEnabled;
+        return isDozeEnabled() && !isAODEnabled() && mPickUpGestureEnabled;
     }
 
     public boolean isIrSilencerEnabled() {
@@ -133,6 +141,9 @@ public class LineageActionsSettings {
                 mFlipToMuteEnabled = sharedPreferences.getBoolean(GESTURE_FLIP_TO_MUTE_KEY, false);
             } else if (GESTURE_LIFT_TO_SILENCE_KEY.equals(key)) {
                 mLiftToSilenceEnabled = sharedPreferences.getBoolean(GESTURE_LIFT_TO_SILENCE_KEY, false);
+            } else if (Constants.FP_HOME_KEY.equals(key) || Constants.FP_KEYS.equals(key) || Constants.FP_HOME_WAKEUP_KEY.equals(key)) {
+                Constants.writePreference(mContext, key);
+                updated = false;
             } else {
                 updated = false;
             }

@@ -1,5 +1,6 @@
+
 /*
- * Copyright (C) 2016 The CyanogenMod Project
+ * Copyright (C) 2016 The CyanogenMod Project <http://www.cyanogenmod.org>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,18 +17,14 @@
 
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
-
-#include <cutils/properties.h>
-#include <string.h>
-
-#undef PROPERTY_VALUE_MAX
-#define BTM_DEF_LOCAL_NAME "Moto Z2 Play"
+#define BTM_DEF_LOCAL_NAME   "Moto Z"
 #define BLUETOOTH_QTI_SW TRUE
 #define MAX_ACL_CONNECTIONS   16
 #define MAX_L2CAP_CHANNELS    16
-#define BLE_VND_INCLUDED TRUE
-#define BT_CLEAN_TURN_ON_DISABLED TRUE
-#define BTM_WBS_INCLUDED TRUE
-#define BTIF_HF_WBS_PREFERRED TRUE
-#define BTM_SCO_ENHANCED_SYNC_ENABLED FALSE
+#define BLE_VND_INCLUDED   TRUE
+#define BT_CLEAN_TURN_ON_DISABLED 1
+
+/* Increasing SEPs to 12 from 6 to support SHO/MCast i.e. two streams per codec */
+#define AVDT_NUM_SEPS 12
+
 #endif

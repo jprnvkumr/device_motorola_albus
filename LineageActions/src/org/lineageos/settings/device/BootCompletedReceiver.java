@@ -25,7 +25,6 @@ import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.util.Log;
 
-import org.lineageos.internal.util.FileUtils;
 import org.lineageos.settings.device.actions.Constants;
 import org.lineageos.settings.device.ServiceWrapper.LocalBinder;
 
@@ -39,13 +38,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
         // Restore nodes to saved preference values
         for (String pref : Constants.sButtonPrefKeys) {
-             String value = Constants.isPreferenceEnabled(context, pref) ? "1" : "0";
-             String node = Constants.sBooleanNodePreferenceMap.get(pref);
-
-             if (!FileUtils.writeLine(node, value)) {
-                 Log.w(TAG, "Write to node " + node +
-                       " failed while restoring saved preference values");
-             }
+             Constants.writePreference(context, pref);
         }
 
         context.startService(new Intent(context, ServiceWrapper.class));

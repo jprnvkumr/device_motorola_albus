@@ -25,11 +25,16 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+# Firmware directory Path
+# Below macro will be read by uevent and path will
+# be added to search path for firmware loading
+firmware_directories /vendor/firmware_mnt/image/
+
 # the DIAG device node is not world writable/readable.
-/dev/diag                 0660   system     oem_2901
-/dev/ttydiag0             0660   system     oem_2901
-/dev/ttydiag1             0660   system     oem_2901
-/dev/ttydiag2             0660   system     oem_2901
+/dev/diag                 0660   system     oem_2950
+/dev/ttydiag0             0660   system     oem_2950
+/dev/ttydiag1             0660   system     oem_2950
+/dev/ttydiag2             0660   system     oem_2950
 
 /dev/genlock              0666   system     system
 /dev/wlan                 0660   wifi       wifi
@@ -51,6 +56,8 @@
 /dev/ipaNatTable          0660   radio      radio
 /dev/rmnet_ctrl           0660   usb        usb
 /dev/dpl_ctrl             0660   usb        usb
+/dev/ipa_odl_ctl          0660   radio      radio
+/dev/ipa_adpl             0660   system     oem_2905
 
 #permissions for CSVT
 /dev/smd11                0660   radio      radio
@@ -123,6 +130,7 @@
 /dev/v4l-subdev*          0660   system     camera
 /dev/qseecom              0660   system     drmrpc
 /dev/smcinvoke            0660   system     system
+/dev/qce                  0660   system     drmrpc
 /dev/qsee_ipc_irq_spss    0660   system     drmrpc
 /dev/seemplog             0660   system     system
 /dev/pft                  0660   system     drmrpc
@@ -145,6 +153,10 @@
 /sys/devices/soc/a000000.qcom,wcnss-wlan/net/wlan0/queues/rx-* rps_cpus           0660   system     system
 /sys/devices/soc/a000000.qcom,wcnss-wlan/net/p2p0/queues/rx-* rps_cpus            0660   system     system
 /dev/spidev0.0            0660   system     audio
+
+# QDSS
+/dev/byte-cntr            0660   system    oem_2902
+
 /dev/msm_camera/*         0660   system     camera
 /dev/gemini/              0660   system     camera
 /dev/mercury0             0660   system     camera
@@ -153,7 +165,6 @@
 /dev/msm_vidc_dec_sec     0660   system     audio
 /dev/msm_vidc_enc         0660   system     audio
 /dev/msm_rotator          0660   system     system
-/dev/hw_random            0600   root       root
 /dev/sdsprpc-smd          0660   system     system
 
 #permissions for audio
@@ -341,8 +352,8 @@
 /sys/devices/platform/mods_ap/greybus1/*/*/leds/mod_light*::backlight brightness 0660 root oem_5020
 
 # IIO (dynamic sensors)
-/sys/devices/iio_sysfs_trigger/add_trigger          0220    system      system
-/sys/devices/iio_sysfs_trigger/remove_trigger       0220    system      system
+/sys/devices/iio_sysfs_trigger add_trigger          0220    system      system
+/sys/devices/iio_sysfs_trigger remove_trigger       0220    system      system
 
 /sys/devices/iio:device* buffer/*                   0664    system      system
 /sys/devices/iio:device* scan_elements/in_*_en      0664    system      system
