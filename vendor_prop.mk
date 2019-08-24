@@ -52,7 +52,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.min.duration.secs=60 \
     audio.offload.gapless.enabled=false \
     qcom.hw.aac.encoder=false \
-    audio_hal.period_size=240 
+    audio_hal.in_period_size=144 \
+    audio_hal.period_multiplier=3 \
+    audio.adm.buffering.ms=2
+
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
