@@ -1,5 +1,0 @@
-allow hal_audio_default sysfs:dir { read write open getattr };
-allow hal_audio_default vendor_data_file:dir rw_dir_perms;
-allow hal_audio_default vendor_data_file:file create_file_perms;
-
-

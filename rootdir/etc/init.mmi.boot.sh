@@ -1,6 +1,6 @@
-#!/vendor/bin/sh
+#!/system/vendor/bin/sh
 
-PATH=/sbin:/vendor/bin
+PATH=/sbin:/system/vendor/bin
 export PATH
 
 scriptname=${0##*/}
