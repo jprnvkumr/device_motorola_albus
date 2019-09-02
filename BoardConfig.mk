@@ -251,7 +251,7 @@ TARGET_LD_SHIM_LIBS := \
     /vendor/lib/libYuvSkia.so|libgpu_mapper_shim.so \
     /vendor/lib64/libsensorndkbridge.so|libshim_ril.so \
     /vendor/lib/libsensorndkbridge.so|libshim_ril.so \
-    /vendor/lib64/vendor.qti.gnss@1.0_vendor.so|libgnss_shim.so \
+    /vendor/bin/hw/vendor.qti.gnss@1.0-service|libgnss_shim.so \
     /vendor/lib/libjustshoot.so|libjustshoot_shim.so
 
 # Releasetools
