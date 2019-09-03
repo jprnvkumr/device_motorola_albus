@@ -7,5 +7,11 @@ allow init sysfs_scsi_devices_other:dir relabelfrom;
 allow init sysfs_scsi_devices_other:file relabelfrom;
 allow init fsg_firmware_file:filesystem  { relabelfrom  mount };
 allow init vendor_file:file execute;
+allow init persist_file:filesystem relabelto;
+allow init persist_file:filesystem relabelfrom;
+allow init persist_file:filesystem associate;
+
+# /proc/filesystems
+allow init proc_filesystems:file getattr;
 #TODO: This should not be needed and needs to be cleaned.
 allow { fsg_firmware_file  }self:filesystem associate;
