@@ -1,13 +1,9 @@
 #include "qsap_api.h"
 
 #include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
 #include <sys/socket.h>
-#include <sys/ioctl.h>
 #include <linux/wireless.h>
-#include "log/log.h"
+#include <string.h>
 
 #include "cutils/log.h"
 
