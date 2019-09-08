@@ -22,55 +22,55 @@ value:2951
 [AID_VENDOR_RFS_SHARED]
 value:2952
 
-[vendor/bin/wcnss_filter]
+[system/vendor/bin/wcnss_filter]
 mode: 0755
 user: AID_BLUETOOTH
 group: AID_BLUETOOTH
 caps: BLOCK_SUSPEND
 
-[vendor/bin/cnss-daemon]
-mode: 0755
-user: AID_BLUETOOTH
-group: AID_BLUETOOTH
-caps: NET_BIND_SERVICE
-
-[vendor/bin/imsdatadaemon]
+[system/vendor/bin/imsdatadaemon]
 user: AID_SYSTEM
 group: AID_SYSTEM
 mode: 0755
 caps: NET_BIND_SERVICE
 
-[vendor/bin/ims_rtp_daemon]
+[system/vendor/bin/ims_rtp_daemon]
 user: AID_SYSTEM
 group: AID_RADIO
 mode: 0755
 caps: NET_BIND_SERVICE
 
-[vendor/bin/pm-service]
+[system/vendor/bin/pm-service]
 user: AID_SYSTEM
 group: AID_SYSTEM
 mode: 0755
 caps: NET_BIND_SERVICE
 
-[vendor/bin/cnd]
+[system/vendor/bin/cnd]
 mode: 0755
 user: AID_SYSTEM
 group: AID_SYSTEM
 caps: NET_BIND_SERVICE BLOCK_SUSPEND NET_ADMIN
 
-[vendor/bin/slim_daemon]
+[system/vendor/bin/slim_daemon]
 mode: 0755
 user:  AID_GPS
 group: AID_GPS
 caps: NET_BIND_SERVICE
 
-[vendor/bin/xtwifi-client]
+[system/vendor/bin/loc_launcher]
+mode: 0755
+user:  AID_GPS
+group: AID_GPS
+caps: SETUID SETGID
+
+[system/vendor/bin/xtwifi-client]
 mode: 0755
 user:  AID_GPS
 group: AID_GPS
 caps: NET_BIND_SERVICE BLOCK_SUSPEND
 
-[vendor/bin/mm-qcamera-daemon]
+[system/vendor/bin/mm-qcamera-daemon]
 mode: 0700
 user: AID_CAMERA
 group: AID_SHELL
