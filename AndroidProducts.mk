@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/potato_potter.mk
+    $(LOCAL_DIR)/potato_albus.mk
