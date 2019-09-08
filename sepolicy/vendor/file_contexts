@@ -31,9 +31,9 @@
 
 # Fingerprint
 /sys/devices/soc/soc:fpc_fpc1020(/.*)?                        u:object_r:sysfs_fingerprint:s0
-/data/fpc(/.*)?                                               u:object_r:fingerprint_data_file:s0
+/data/\.fps(/.*)?                                               u:object_r:fingerprint_data_file:s0
 /data/fpc/socket                                              u:object_r:fingerprint_socket:s0
-/data/.fps                                                    u:object_r:fingerprint_data_file:s0
+/data/fpc(/.*)?                                                    u:object_r:fingerprint_data_file:s0
 
 # Modem
 /persist/mdm(/.*)?                                       u:object_r:persist_modem_file:s0
@@ -58,7 +58,8 @@
 
 /data/local/dbvc(/.*)?                                   u:object_r:dbvc_data_file:s0
 /data/local/moodle(/.*)?                                 u:object_r:moodle_data_file:s0
-/data/misc/cutback(/.*)?                                 u:object_r:cutback_data_file:s0
+/data/vendor/misc/cutback(/.*)?                          u:object_r:cutback_data_file:s0
+
 
 /data/misc/sds(/.*)?                                     u:object_r:sds_data_file:s0
 
