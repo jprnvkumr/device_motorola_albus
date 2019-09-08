@@ -20,8 +20,7 @@
 #include <cutils/properties.h>
 #include <string.h>
 
-#undef PROPERTY_VALUE_MAX
-#define BTM_DEF_LOCAL_NAME "Moto Z2 Play"
+#define BTM_DEF_LOCAL_NAME "Moto G5 Plus"
 #define BLUETOOTH_QTI_SW TRUE
 #define MAX_ACL_CONNECTIONS   16
 #define MAX_L2CAP_CHANNELS    16
@@ -29,5 +28,6 @@
 #define BT_CLEAN_TURN_ON_DISABLED TRUE
 #define BTM_WBS_INCLUDED TRUE
 #define BTIF_HF_WBS_PREFERRED TRUE
-#define BTM_SCO_ENHANCED_SYNC_ENABLED FALSE
+#define BTM_SCO_ENHANCED_SYNC_DISABLED TRUE
+#undef PROPERTY_VALUE_MAX
 #endif
