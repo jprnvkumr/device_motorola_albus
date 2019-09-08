@@ -18,7 +18,7 @@
 
 set -e
 
-DEVICE=albus
+DEVICE=potter
 VENDOR=motorola
 
 # Load extract_utils and do some sanity checks
@@ -34,15 +34,19 @@ if [ ! -f "$HELPER" ]; then
 fi
 . "$HELPER"
 
+# Default to sanitizing the vendor folder before extraction
+CLEAN_VENDOR=true
+
 while [ "$1" != "" ]; do
     case $1 in
-        -n | --no-cleanup )     CLEAN_VENDOR=false
+        -p | --path )           shift
+                                SRC=$1
                                 ;;
         -s | --section )        shift
                                 SECTION=$1
                                 CLEAN_VENDOR=false
                                 ;;
-        * )                     SRC=$1
+        -n | --no-cleanup )     CLEAN_VENDOR=false
                                 ;;
     esac
     shift
@@ -52,25 +56,16 @@ if [ -z "$SRC" ]; then
     SRC=adb
 fi
 
-# Initialize the helper
-setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false "$CLEAN_VENDOR"
+# Initialize the helper for device
+setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" true "$CLEAN_VENDOR"
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 
-BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
+if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
+    # Reinitialize the helper for device
+    setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false "$CLEAN_VENDOR"
 
-# Load camera configs form /vendor
-CAM2_SENSOR_MODULES="$BLOB_ROOT"/vendor/lib/libmmcamera2_sensor_modules.so
-sed -i "s|/system/etc/|/vendor/etc/|g" "$CAM2_SENSOR_MODULES"
-
-# Load Zaf configs form /vendor
-ZAF_CORE="$BLOB_ROOT"/vendor/lib/libzaf_core.so
-sed -i "s|/system/etc/|/vendor/etc/|g" "$ZAF_CORE"
-
-patchelf --replace-needed android.hardware.gnss@1.0.so android.hardware.gnss@1.0-v27.so $BLOB_ROOT/vendor/lib64/vendor.qti.gnss@1.0_vendor.so
-patchelf --add-needed libqsap_shim.so $BLOB_ROOT/vendor/lib64/libmdmcutback.so
-patchelf --add-needed libshim_ril.so $BLOB_ROOT/vendor/lib64/libmdmcutback.so
-patchelf --add-needed libgpu_mapper_shim.so $BLOB_ROOT/vendor/lib/libmot_gpu_mapper.so
-patchelf --add-needed libjustshoot_shim.so $BLOB_ROOT/vendor/lib/libjustshoot.so
+    extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC" "$SECTION"
+fi
 
 "$MY_DIR"/setup-makefiles.sh

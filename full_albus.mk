@@ -17,6 +17,7 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk)
 
 # Inherit from albus device
 $(call inherit-product, device/motorola/albus/device.mk)
@@ -25,5 +26,8 @@ $(call inherit-product, device/motorola/albus/device.mk)
 PRODUCT_DEVICE := albus
 PRODUCT_NAME := full_albus
 
+PRODUCT_ENFORCE_RRO_TARGETS := \
+    framework-res
+
 # for specific
-$(call inherit-product, vendor/motorola/albus/albus-vendor.mk)
+$(call inherit-product, vendor/motorola/potter/potter-vendor.mk)

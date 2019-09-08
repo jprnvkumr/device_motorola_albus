@@ -1,0 +1,26 @@
+[
+  { 
+    "remote": "github",
+    "repository":  "PotatoDevices/kernel_motorola_msm8953",
+    "target_path": "kernel/motorola/msm8953",
+    "branch": "baked-release"
+  },
+  {
+    "remote": "github",
+    "repository": "PotatoDevices/vendor_motorola_potter",
+    "target_path": "vendor/motorola/potter",
+    "branch": "baked-release"
+  },
+  {
+    "remote": "github",
+    "repository": "PixelExperience/packages_resources_MotoActions",
+    "target_path": "packages/resources/MotoActions",
+    "branch": "pie"
+  }, 
+  {
+    "remote": "github",
+    "repository": "Ashwin4RC/android_system_qcom",
+    "target_path": "system/qcom",
+    "branch": "9.0"
+  }
+]
