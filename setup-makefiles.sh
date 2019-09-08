@@ -18,7 +18,8 @@
 
 set -e
 
-DEVICE=albus
+# Required!
+DEVICE=potter
 VENDOR=motorola
 
 INITIAL_COPYRIGHT_YEAR=2017
@@ -36,17 +37,29 @@ if [ ! -f "$HELPER" ]; then
 fi
 . "$HELPER"
 
-# Initialize the helper
-setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT"
+# Initialize the helper for device
+setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" true
 
 # Copyright headers and guards
-write_headers
+write_headers "potter"
 
-write_makefiles "$MY_DIR"/proprietary-files.txt true
+# The standard blobs
+write_makefiles "$MY_DIR"/proprietary-files.txt
 
-cat << EOF >> "$ANDROIDMK"
-
-EOF
-
-# Finish
+# We are done!
 write_footers
+
+if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
+    # Reinitialize the helper for device
+    INITIAL_COPYRIGHT_YEAR="$DEVICE_BRINGUP_YEAR"
+    setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false
+
+    # Copyright headers and guards
+    write_headers
+
+    # The standard device blobs
+    write_makefiles "$MY_DIR"/../$DEVICE/proprietary-files.txt
+
+    # We are done!
+    write_footers
+fi
