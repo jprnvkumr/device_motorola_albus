@@ -1,4 +1,1 @@
-allow fsck vendor_file:file getattr;
-allow fsck hal_gnss_qti_exec:file getattr;
-allow fsck modem_efs_partition_device:blk_file { read write getattr open ioctl };
-
+# allow fsck block_device:blk_file { read write };
