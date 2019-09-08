@@ -30,4 +30,4 @@ PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
 # for specific
-$(call inherit-product, vendor/motorola/potter/potter-vendor.mk)
+$(call inherit-product, vendor/motorola/albus/albus-vendor.mk)
