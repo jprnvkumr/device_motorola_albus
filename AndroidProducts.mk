@@ -14,4 +14,8 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_albus.mk
+    $(LOCAL_DIR)/havoc_albus.mk
+COMMON_LUNCH_CHOICES := \
+    havoc_albus-user \
+    havoc_albus-userdebug \
+    havoc_albus-eng 

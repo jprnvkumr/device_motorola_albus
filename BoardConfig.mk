@@ -243,6 +243,7 @@ LZMA_RAMDISK_TARGETS := recovery
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+SELINUX_IGNORE_NEVERALLOWS := true
 
 # Shim
 TARGET_LD_SHIM_LIBS := \
