@@ -1,7 +1,7 @@
 # binder_call(init, mm-qcamerad);
 #binder_call(init, hwservicemanager);
 # binder_call(init, servicemanager);
-
+allow init sysfs:file setattr;
 allow init hwservicemanager:binder call;
 allow init mm-qcamerad:binder transfer;
 allow init platform_app:binder transfer;
